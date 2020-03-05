@@ -84,12 +84,10 @@
     function task4()
     {
         $file4 = file_get_contents('https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json'); // открываем файл
-        $array1=[];
+        $array1=json_decode($file4,true);
 
-        while ($str=fgets($file4,2,';'))
-        {
-            $str=$array1;
-        }
+        echo print_r($array1['query']);
     }
 
     echo task4();
+
