@@ -86,7 +86,9 @@
         $file4 = file_get_contents('https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json'); // открываем файл
         $array1=json_decode($file4,true);
 
-        echo print_r($array1['query']);
+        echo print_r($array1['query']['pages']['15580374']['title']);
+        echo "<br>";
+        echo print_r($array1['query']['pages']['15580374']['pageid']);
     }
 
     echo task4();
